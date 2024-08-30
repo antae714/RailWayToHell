@@ -1,0 +1,110 @@
+	{
+		Archive archive;
+		Archive archive2;
+		Archive archive3;
+		//Test
+		{
+			StageInfo2 stageInfo2;
+			SpawnInfo* spawnInfo = NewObject<SpawnInfo>(&stageInfo2);
+			spawnInfo->SpawnTurn = 0;
+			spawnInfo->SpawnPos.push_back(-1);
+			spawnInfo->SpawnPos.push_back(1);
+			spawnInfo->SpawnPos.push_back(2);
+			spawnInfo->SpawnPos.push_back(-1);
+			spawnInfo->SpawnPos.push_back(2);
+			spawnInfo->SpawnPos.push_back(1);
+			spawnInfo->SpawnPos.push_back(-1);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			stageInfo2.WaveSpawnInfos.push_back(spawnInfo);
+			SpawnInfo* spawnInfo2 = NewObject<SpawnInfo>(&stageInfo2);
+			spawnInfo2->SpawnTurn = 2;
+			spawnInfo2->SpawnPos.push_back(3);
+			spawnInfo2->SpawnPos.push_back(-1);
+			spawnInfo2->SpawnPos.push_back(-1);
+			spawnInfo2->SpawnPos.push_back(-1);
+			spawnInfo2->SpawnPos.push_back(-1);
+			spawnInfo2->SpawnPos.push_back(-1);
+			spawnInfo2->SpawnPos.push_back(2);
+			spawnInfo2->SpawnWeight.push_back(0);
+			spawnInfo2->SpawnWeight.push_back(0);
+			spawnInfo2->SpawnWeight.push_back(0);
+			spawnInfo2->SpawnWeight.push_back(0);
+			spawnInfo2->SpawnWeight.push_back(0);
+			spawnInfo2->SpawnWeight.push_back(0);
+			spawnInfo2->SpawnWeight.push_back(0);
+			stageInfo2.WaveSpawnInfos.push_back(spawnInfo2);
+			TrackingSpawnInfo* trackingInfo = NewObject<TrackingSpawnInfo>(&stageInfo2);
+			trackingInfo->SpawnTurn = 3;
+			trackingInfo->SpawnID = 1;
+			TrackingSpawnInfo* trackingInfo2 = NewObject<TrackingSpawnInfo>(&stageInfo2);
+			trackingInfo->SpawnTurn = 5;
+			trackingInfo->SpawnID = 1;
+			stageInfo2.TrackingSpawnInfos.push_back(trackingInfo);
+			stageInfo2.TrackingSpawnInfos.push_back(trackingInfo2);
+			stageInfo2.Stage = 3;
+			stageInfo2.StageMaxTurn = 5;
+			stageInfo2.Serialize(archive);
+
+		}
+		{
+			StageInfo2 stageInfo2;
+			SpawnInfo* spawnInfo = NewObject<SpawnInfo>(&stageInfo2);
+			spawnInfo->SpawnTurn = 0;
+			spawnInfo->SpawnPos.push_back(-1);
+			spawnInfo->SpawnPos.push_back(1);
+			spawnInfo->SpawnPos.push_back(2);
+			spawnInfo->SpawnPos.push_back(-1);
+			spawnInfo->SpawnPos.push_back(2);
+			spawnInfo->SpawnPos.push_back(1);
+			spawnInfo->SpawnPos.push_back(-1);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			spawnInfo->SpawnWeight.push_back(0);
+			stageInfo2.WaveSpawnInfos.push_back(spawnInfo);
+			SpawnInfo* spawnInfo2 = NewObject<SpawnInfo>(&stageInfo2);
+			spawnInfo2->SpawnTurn = 2;
+			spawnInfo2->SpawnPos.push_back(3);
+			spawnInfo2->SpawnPos.push_back(-1);
+			spawnInfo2->SpawnPos.push_back(-1);
+			spawnInfo2->SpawnPos.push_back(-1);
+			spawnInfo2->SpawnPos.push_back(-1);
+			spawnInfo2->SpawnPos.push_back(-1);
+			spawnInfo2->SpawnPos.push_back(2);
+			stageInfo2.WaveSpawnInfos.push_back(spawnInfo2);
+
+			TrackingSpawnInfo* trackingInfo = NewObject<TrackingSpawnInfo>(&stageInfo2);
+			trackingInfo->SpawnTurn = 3;
+			trackingInfo->SpawnID = 1;
+			TrackingSpawnInfo* trackingInfo2 = NewObject<TrackingSpawnInfo>(&stageInfo2);
+			trackingInfo->SpawnTurn = 5;
+			trackingInfo->SpawnID = 1;
+			stageInfo2.TrackingSpawnInfos.push_back(trackingInfo);
+			stageInfo2.TrackingSpawnInfos.push_back(trackingInfo2);
+			stageInfo2.Stage = 4;
+			stageInfo2.StageMaxTurn = 5;
+			stageInfo2.Serialize(archive2);
+
+		}
+
+		YAML::Emitter emitter;
+		emitter << YAML::BeginSeq;
+		emitter << archive;
+		emitter << archive2;
+
+		emitter << YAML::EndSeq;
+		archive3 = LoadArchive(emitter.c_str());
+
+		std::stringstream sss;
+		sss << archive3;
+		auto temppp = sss.str();
+	}

@@ -1,0 +1,92 @@
+- Stage: 8
+  StageMaxTurn: 5
+  TrackingSpawnInfos:
+    - TrackingSpawnInfo:
+        SpawnID: 1
+        SpawnTurn: 5
+    - TrackingSpawnInfo:
+        SpawnID: 0
+        SpawnTurn: 0
+  WaveSpawnInfos:
+    - SpawnInfo:
+        SpawnPos:
+          - -1
+          - 1
+          - 2
+          - -1
+          - 2
+          - 1
+          - -1
+        SpawnTurn: 1
+        SpawnWeight:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+    - SpawnInfo:
+        SpawnPos:
+          - 3
+          - -1
+          - -1
+          - -1
+          - -1
+          - -1
+          - 2
+        SpawnTurn: 2
+        SpawnWeight:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+- Stage: 9
+  StageMaxTurn: 5
+  TrackingSpawnInfos:
+    - TrackingSpawnInfo:
+        SpawnID: 1
+        SpawnTurn: 5
+    - TrackingSpawnInfo:
+        SpawnID: 0
+        SpawnTurn: 0
+  WaveSpawnInfos:
+    - SpawnInfo:
+        SpawnPos:
+          - -1
+          - 1
+          - 2
+          - -1
+          - 2
+          - 1
+          - -1
+        SpawnTurn: 1
+        SpawnWeight:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+    - SpawnInfo:
+        SpawnPos:
+          - 3
+          - -1
+          - -1
+          - -1
+          - -1
+          - -1
+          - 2
+        SpawnTurn: 2
+        SpawnWeight:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0

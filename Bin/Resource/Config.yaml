@@ -1,0 +1,93 @@
+# 스페이스바(배속) PgDn(스테이지 넘기기) 등 / 0일 때 기능 끔
+DEVELOPER_MODE: 0
+
+# UI --------------------------
+UI_CursorSize: 80
+
+# Common --------------------------
+
+# 플레이어의 넉백탄 등으로 벽 또는 다른 캐릭터와 충돌할 경우 가해지는 데미지
+Common_CollisionDamageBetweenCharacter: 1
+# 일반 공격을 당한 적 혹은 앞에 있는 캐릭터가 넉백탄에 의해 부딪혀 올 때 뒤에 있는 적이 밀려나는 연출의 이동 거리
+Common_HitKnockbackDistance: 20.0
+# 밀려나는 연출의 시간
+Common_HitKnockbackDuration: 0.2
+
+
+# Player --------------------------
+
+# 좌우로 이동할 경우 공격 대상을 결정하는 중간 지점까지 이동하는데 걸리는 시간
+Player_FirstMoveDuration: 0.2
+# 좌우로 이동할 경우 공격 대상을 결정한 뒤 최종 지점까지 이동하는데 걸리는 시간
+Player_SecondMoveDuration: 0.2
+
+# Attack 스프라이트 전환 후 공격 이펙트 실행까지 걸리는 시간 / 해당 시간 경과 후 카메라를 흔들며 시간을 멈춘다(히트스톱)
+Player_AttackEnterDelay: 0.2
+# 공격 이펙트 실행 후 히트스톱의 지속시간 / 해당 시간 경과 후 카메라가 다시 한 번 흔들리며 시간이 흐른다
+Player_AttackHitStopDuration: 0.4
+# 공격 이펙트가 끝난 후 Idle 스프라이트로 전환함과 동시에 게임매니저의 Phase를 전환하기까지 걸리는 시간
+Player_AttackExitDelay: 0.5
+
+# 의미는 위와 동일함
+Player_KnockbackEnterDelay: 0.2
+Player_KnockbackHitStopDuration: 0.4
+Player_KnockbackExitDelay: 1.0
+
+# 플레이어 피격시 Hit 스프라이트로 전환 후 다시 Idle 스프라이트로 돌아가기까지 대기하는 시간
+Player_HitSpriteDuration: 0.4
+# 플레이어 피격시 뒤로 밀리는(연출상) 픽셀 거리
+Player_HitKnockbackDistance: 20.0
+
+# 기본 공격 데미지
+Player_NormalAttackDamage: 1
+
+
+
+# Effect --------------------------
+
+# 플레이어 공격시 공격 이펙트가 시작될 때 카메라가 흔들리는 시간
+Effect_EnterShakeDurationOnPlayerAttack: 0.2
+# 플레이어 공격시 공격 이펙트가 시작될 때 카메라가 흔들리는 강도
+Effect_EnterShakeMagnitudeOnPlayerAttack: 150.0
+# 플레이어 공격시 공격 이펙트가 끝날 때 카메라가 흔들리는 시간
+Effect_ExitShakeDurationOnPlayerAttack: 0.2
+# 플레이어 공격시 공격 이펙트가 끝날 때 카메라가 흔들리는 강도
+Effect_ExitShakeMagnitudeOnPlayerAttack: 150.0
+
+# 열차가 위아래로 흔들리는 간격
+Effect_ShakeTrainInterval: 7.0
+# 열차가 위아래로 흔들리는 시간
+Effect_ShakeTrainDuration: 0.4
+# 열차가 위아래로 흔들리는 강도
+Effect_ShakeTrainMagnitude: 150.0
+
+
+
+# Monster --------------------------
+
+# 플레이어 넉백탄 피격시 뒤로 밀려나는 애니메이션의 시간 (뒤에 벽 또는 다른 적이 있을 경우 해당 시간을 4:6으로 나누어 처음 밀리는 시간 / 튕겨서 되돌아오는 시간으로 사용함
+Monster_KnockbackDuration: 0.2
+# 몬스터 피격시 Hit 스프라이트로 전환 후 다시 Idle 또는 AttackReady 스프라이트로 돌아가기까지 대기하는 시간
+Monster_HitSpriteDuration: 0.4
+
+# 아직 사용하지 않고 있음
+Monster_HitDelay: 0.2
+Monster_MoveDelay: 0.2
+Monster_NearAttackDelay: 0.2
+Monster_FarAttackDelay: 0.2
+Monster_RushDelay: 0.2
+
+
+# GameManager -------------------------
+# 몬스터 스폰시간
+GameManager_MonsterSpawnTime: 1.0
+#행동간의 간격
+GameManager_CommandWaitTime: 0.3
+#플레이어 장기화시간
+GameManager_AFKTextTime: 10.0
+
+# 시작 스테이지 (0-1 튜토리얼 / 2-4 일반 / 5 보스 / 6 심장)
+GameManager_StartStageNumber: 0
+
+# BackGround -------------------------
+BackGround_ChageTime: 3.0
